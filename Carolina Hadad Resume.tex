@@ -1,282 +1,351 @@
-%_____________________________________________________________________________________________________________
-% @brief    Resume for Carolina Luz Hadad
-\documentclass[margin,line]{resume}
-\usepackage[spanish,activeacute]{babel}
-\usepackage{verbatim}
-\usepackage{changepage}
-\usepackage{fontawesome}
-\usepackage[colorlinks]{hyperref}
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%   The MIT License (MIT)
+%
+%   Copyright (c) 2021 Jitin Nair
+%
+%   Permission is hereby granted, free of charge, to any person obtaining a copy
+%   of this software and associated documentation files (the "Software"), to deal
+%   in the Software without restriction, including without limitation the rights
+%   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%   copies of the Software, and to permit persons to whom the Software is
+%   furnished to do so, subject to the following conditions:
+%   
+%   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%   THE SOFTWARE.
+%   
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
 
-%_____________________________________________________________________________________________________________
+%----------------------------------------------------------------------------------------
+%   DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%   FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip}    
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}               
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%   BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
 \begin{document}
-\name{\Large Carolina Luz Hadad}
-\begin{resume}
 
-%_____________________________________________________________________________________________________________
-% Contact Information
-\section{\mysidestyle Contact\\Information}
+% non-numbered pages
+\pagestyle{empty} 
 
-\faMapMarker \vspace{5mm} Buenos Aires, Argentina \hfill
-\faEnvelope \vspace{5mm} carolinahadad@gmail.com
-\faGithub \vspace{5mm} \href{https://github.com/carohadad}{github.com/carohadad} \hfill
-\faTwitter \vspace{5mm} \href{https://twitter.com/carohadad}{@carohadad}
+%----------------------------------------------------------------------------------------
+%   TITLE
+%----------------------------------------------------------------------------------------
 
-\vspace{-1.5cm}
-%_____________________________________________________________________________________________________________
-% Work Experience
-\section{\mysidestyle Work\\Experience}
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
 
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Carolina Hadad} \\[7.5pt]
+\href{https://www.linkedin.com/in/carohadad/}{\raisebox{-0.05\height}\faLinkedin\ carohadad} \ $|$ \ 
+\href{mailto:carolinahadad@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ carolinahadad@gmail.com} \ $|$ \ 
+\raisebox{-0.05\height}\faMapPin \ Buenos Aires, Argentina
 
-\textbf{\href{https://www.huesped.org.ar/}{Fundaci\'on Huesped}}\\\vspace{1mm}
-\textsl{Program Manager - Digital Innovation Lab} \hfill \textbf{Jun 2020 -- present}\vspace{-3mm}\\\vspace{-1mm}
-\\
-Fundaci\'on Huesped is an Argentine organization that works in the public health field focusing on HIV/AIDS, STIs, sexual and reproductive health and now COVID-19 support.
-\\
-I work with all other areas in the Foundation to apply technology to increase the impact of their programs.
+\end{tabularx}
 
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
 
-\textbf{Google Argentina}\vspace{2mm}\\\vspace{1mm}
-\textsl{Senior Technical Solutions Consultant} 
- \hfill \textbf{Nov 2017 -- Feb 2020}\vspace{-3mm}\\\vspace{-1mm}
-\hfill \vspace{-3mm}\\\vspace{-1mm}
-\\
-gTech Professional Services for Publishers team makes sure that our external partners are able to grow their business with the full support of Google's products. Publisher Solution Consultant serve as liaisons between Google\'s biggest local partners and internal Sales, Product, and Engineering teams. 
-\\
-I advice over 100 different partners in LATAM with proactive and reactive projects, events, talks and custom code.
+%Interests/ Keywords/ Summary
+\section{Summary}
+For more than 12 years I worked applying technology to support social justice projects.
 
-Beside my core job I'm in the leadership team for Women@ ERG, I participate in Parents@ and I'm a trained facilitator for DEI programs in our office.
- 
+%Experience
+\section{Work Experience}
 
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Product Manager @ \href{https://wearehorizontal.org/}{Horizontal} } & \hfill Nov 2022 - present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Horizontal is a global civil society organization that supports frontline defenders, activists and journalists through digital security and tool development. Horizontal flagship product is \href{https://tella-app.org/Tella}{Tella}, a platform for human rights documenters. My role inludes:
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Manage products through the full product lifecycle, including building product roadmap, defining product requirements, writing requirements, prototyping, developing, and launching products.
+        \item[--] Work with a cross-functional team of designers and software engineers.
+        \item[--] Write internal and external documentation, including internal processes, and technical documentation, guides and tutorials. Provide support and troubleshooting to community partners and users.
+        \item[--] Ensure our products are secure, usable, and accessible to high-risk communities and users with low tech literacy.
+        \item[--] Ensure that we set realistic deadlines and meet internal and external deadlines while retaining a healthy working environment and work/life balance for the product team.
+    \end{itemize}
+}  \\
+\end{tabularx}
 
-\textbf{\href{http://www.chicasentecnologia.org/}{Chicas en Tecnolog\'ia}}\\\vspace{1mm}
-\textsl{Co-founder, now serving in Board of Directors} \hfill \textbf{March 2015 -- present}\vspace{-3mm}\\\vspace{-1mm}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Technical Project Manager @ \href{https://theengineroom.org/}{The Engine Room} } & \hfill Jul 2021 - Nov 2022 \\[3.75pt]
 
-Chicas en Tecnolog\'ia is a non-profit organization that seeks to motivate, empower and increase the knowledge and enthusiasm of young women for technology.
-Thoug the years I had several roles including Team Manager, curricula leader and Program Manager.
+\multicolumn{2}{@{}X@{}}{
+The Engine Room works to shape the ways civil society uses and thinks about technology and data, in spaces like social justice movements, digital rights advocacy and humanitarian work. Since 2011 The Engine Room have supported more than 500 organisations and published and published research identifying and analysing trends, challenges and opportunities at the intersections of technology, data and justice-focused activism. My role included:
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Project design and management.
+        \item[--] Leading technical projects and consultants.
+        \item[--] Directly support partners.
+        \item[--] Community engagement and public speaking.
+        \item[--] Budget and contract management.
+    \end{itemize}
+} \\
+\end{tabularx}
 
-\begin{itemize}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Program Manager - Digital Innovation Lab @ \href{https://www.huesped.org.ar/}{Fundación Huésped} } & \hfill Jun 2020 – Jun 2021 \\[3.75pt]
 
-\item We have expanded our programs to all Argentina: We have presence in 14 provinces.
+\multicolumn{2}{@{}X@{}}{
+Fundación Huésped is an Argentine organization that works in the public health field focusing on HIV/AIDS, STIs, sexual and reproductive health and now COVID-19 support.
+I worked with all other areas in the Foundation to apply technology to increase the impact of their programs.
+} \\
+\end{tabularx}
 
-\item We have 5 full time employees.
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Senior Technical Solutions Consultant for Publishers @ Google} & \hfill Nov 2017 – Feb 2020 \\[3.75pt]
 
-\item There are +3,000 teenage girls,  +200 technical mentors and +500 teachers and parents. We talk to more than 3 million people through our social media.
+\multicolumn{2}{@{}X@{}}{
+gTech Professional Services for Publishers team makes sure that the external partners are able to grow their business with the full support of Google’s products. Publisher Solutions Consultants serve as liaisons between Google´s biggest local partners and internal Sales, Product, and Engineering teams. I advised over 100 different partners in LATAM with proactive and reactive projects, events, talks and custom code. 
 
-\item We have an active research area with publications funded by partners such as IDB.
-
-\end{itemize}
-
-\vspace{-5mm}
-\textbf{\href{https://www.huesped.org.ar/}{Fundaci\'on Huesped}}\\\vspace{1mm}
-\textsl{Consultant} \hfill \textbf{December 2016 -- March 2017}
-\\
-I did a 3-months consulting job to help coordinating Fundaci\'on Huesped's technical projects implemented by external providers.
-
-
-\textbf{Gobierno Abierto, Argentina Government}\vspace{2mm}\vspace{1mm} \hfill \textbf{May 2015 -- August 2016}\vspace{-3mm}\\\vspace{-1mm}
-
-\begin{itemize}
-\item \textbf{Subsecreatar\'ia de Innovaci\'on P\'ublica y Gobierno Abierto, Argentina Government}\vspace{2mm}\\\vspace{1mm}
-\textsl{Team Manager} \hfill \vspace{-3mm}\\\vspace{-1mm}
-\\
-Our team was in charge of creating, obtaining, publishing and generating products and visualizations with Open Data.
-\\
-I coordinated a team of 8 programmers, devops and UX designers in the Open Data office in the Argentina Government. 
-
-
-\item \textbf{Laboratorio de Gobierno, Buenos Aires City Government}\vspace{2mm}\\\vspace{1mm}
-\textsl{Digital Innovation Manager} \hfill \vspace{-3mm}\\\vspace{-1mm}
-\\
-Our team was in charge developing products, data visualization and internal tools that generate and use open data.
-\\
-I coordinated a team of three programmers and one UX designer. 
-
-\end{itemize}
+Beside my core job I’m in the leadership team for Women@ ERG, I participated in Parents@ ERG and I’m a trained facilitator for DEI programs in the office, including training managers on race and gender topics.
+} \\
+\end{tabularx}
 
 
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Open Data Office @ Argentina Government} & \hfill May 2015 – Aug 2016 \\[3.75pt]
 
+\multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[-] \textbf{Team Manager at Subsecreataría de Innovación Pública y Gobierno Abierto}: 
+        Our team was in charge of creating, obtaining, publishing and generating products and visua- lizations with Open Data. I coordinated a team of 8 programmers, devops and UX designers in the Open Data office in the Argentina Government.
+        \item[-] \textbf{Digital Innovation Manager at Laboratorio de Gobierno, Buenos Aires City}: 
+        Our team was in charge developing products, data visualization and internal tools that generate and use open data. I coordinated a team of three programmers and one UX designer.
+    \end{itemize}
+}
+\end{tabularx}
 
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Software Engineering Intern @ Google, Mountain View, USA} & \hfill Dec 2013 – Feb 2014 \\[3.75pt]
 
-\newpage
-
-
-
-\textbf{Google, Mountain View, USA}\vspace{2mm}\\\vspace{1mm}
-\textsl{Software Engineering Intern} \hfill \textbf{December 2013 -- February 2014}\vspace{-3mm}\\\vspace{-1mm}
-\\
+\multicolumn{2}{@{}X@{}}{
 Internship hosted by the engEDU team called CS Academy. This team designs and runs all the global educational program inside and outside Google. I coded mostly in Python with App Engine.
+} \\
+\end{tabularx}
 
-\textbf{\href{http://www.manas.com.ar/}{Manas Technology Solutions}} - 
-\textbf{\href{http://www.instedd.org/}{InSTEDD iLab Latam}}\vspace{2mm}\\\vspace{1mm}
-\textsl{Full Stack Developer} \hfill \textbf{February 2009 -- May 2015}\vspace{-3mm}\\\vspace{-1mm}
-\\
-Manas is company partnered with InSTEDD, an NGO specialized in building integral solutions for health, humanitarian and educational purposes which targets users in Africa, Southeast Asia and Latin America.  
-Coded: Webapps in Ruby on Rails + Knokout.js, Android and iPhone  apps and infrastructure projects using C\#.
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Full Stack Developer @ \href{https://manas.tech/}{Manas.tech}} & \hfill Feb 2009 – May 2015 \\[3.75pt]
 
-
-
-%_____________________________________________________________________________________________________________
-% Education
-\section{\mysidestyle Education}
+\multicolumn{2}{@{}X@{}}{
+Manas is software factory partnered with \href{https://instedd.org/}{InSTEDD}, a CSO specialized in building integral solutions for health, humanitarian and educational purposes which targets users in Africa, Southeast Asia and Latin America. I coded webapps in Ruby on Rails + Knokout.js, Android and iPhone apps and infrastructure projects using C\#.
+} \\
+\end{tabularx}
 
 
+%Co-founded organizations
+\section{Co-founded organizations}
 
-\textbf{Recurse Center, New York} \hfill \textbf{Mar 2017 -- May 2017}\vspace{-3mm}\\\vspace{-1mm}
-\\
-The Recurse Center is a full-time, self-directed, educational retreat for people who want to get better at programming, whether they've been coding for three decades or three months.  \\
-Acceptance rate is lower than 10\%. I received a full scholarship to cover my living expenses.
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{\href{https://chicasentecnologia.org/}{Chicas en Tecnología}} & \hfill Co-founded in 2015 - to present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Chicas en Tecnología is an Argentine non-profit civil society organization that since 2015 seeks to reduce the gender gap in technology in the region. We motivate, train and accompany the next generation of women leaders in technology. Chicas en Tecnología´s programs have impacted 7,000 teenage girls in 18 countries in Latin America. Chicas en Tecnología's programs and initiatives are based in 6 pillars:
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Diversity and Equity
+        \item[--] Education
+        \item[--] Entrepreneurship
+        \item[--] Social Impact
+        \item[--] Tech innovation
+        \item[--] Leadership
+    \end{itemize}
+Over the years I served in different roles, including as programs' lead and as part of the board of directors. Currently I only advise the Executive Director as needed.
+}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{\href{https://www.cientificasdeaca.com/}{Científicas de Acá}} & \hfill Co-founded in 2020 - to present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Científicas de Acá is a project created to make visible the women who worked and work doing science and technology in Argentina. We want to show the diversity in research in our country. That is why we tell stories of laboratory and territory scientists, from all regions and times. We have published an ilustrated book, an activity notebook for children and have hosted talks and activities for people all ages. All the content que create is forever free and open source.
+}  \\
+\end{tabularx}
+%----------------------------------------------------------------------------------------
+%   EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}} 
+
+Mar 2017 – May 2017 &  \textbf{Recurse Center, New York} \hfill  \\
+
+& The Recurse Center is a full-time, self-directed, educational retreat for people who want to get better at programming. \\
+
+Dec 2016 – April 2017 & Innovation for Equality Fellow at \textbf{University of California, Berkeley} \hfill \\ 
+
+2007 – 2012 & \textbf{Bachelor in Computer Science} at Universidad de Buenos Aires \hfill  \\
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%   PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Books and Publications}
 
 
-\textbf{University of California, Berkeley} \hfill \textbf{Dec 2016 -- April 2017}\vspace{-3mm}\\\vspace{-1mm}
-\\
-\textsl{Innovation for Equality Fellow} 
+
+\begin{description}
+\item[Científicas de Acá - TantaAgua Editorial (2021)] Illustrated book with stories of women in science in Argentina.
+\item[Chicas en Tecnología Reiniciando el Sistema - Penguin Random House (2021)] Book about women in technology in Argentina.
+\item[Technology Columnist for La Nación (major newspaper) since 2018 ] Occasional column about technology and feminism.
+\item[Columnist for  Intrépidas, amagazine for kids (2018-2019)] Programming activities for kids.
 
 
-\textbf{University of Buenos Aires UBA, Faculty of Exact and Natural Sciences} \vspace{2mm}\\\vspace{1mm}
-\textsl{Bachelor in Computer Science} \hfill \textbf{2007 -- 2012}\vspace{-3mm}\\\vspace{-1mm}
+\end{description}
+
+%----------------------------------------------------------------------------------------
+%   Teachning
+% TODO : Agregar los Profesora Invitada
+%----------------------------------------------------------------------------------------
+\section{Teaching Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Mentor and facilitator on several Chicas en Tecnología programs} & \hfill  2015 to 2019 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Through the years I teached introductory programming courses to teenage girls, train the trainers for mentors and teachers at schools, designed curricula for several programs and activities and reviewed and commented programs design and learning roadmaps.
+}  \\
+\end{tabularx}
 
 
-%_____________________________________________________________________________________________________________
-% Community Involvement
-\section{\mysidestyle Volunteering}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Facilitator of Palermo programming club} & \hfill Jan 2015 – Dec 2015 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Programá tu Futuro is an initiative of the Buenos Aires City Government to teach programming for free in the city’s public libraries. I was one of the mentors in charge of the Palermo Club.
+}  \\
+\end{tabularx}
 
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Teaching Assistant at University of Buenos Aires} & \hfill Mar 2012 – Jul 2012 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Hosted activities, talks and exhibitions for teenagers interested in Computer Science in general and about the Computer Science department at the Universidad de Buenos Aires in particular.
+}  \\
+\end{tabularx}
 
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Science popularizer at University of Buenos Aires} & \hfill Mar 2011 – Dec 2011 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+Hosted activities, talks and exhibitions for teenagers interested in Computer Science in general and about the Universidad de Buenos Aires in particular.
+}  \\
+\end{tabularx}
 
-\textbf{Global Shaper - Chosen by the World Economic Forum} \hfill \textbf{June 2014 -- May 2017} \vspace{2mm}\\\vspace{1mm}
-\textsl{Member of the Buenos Aires hub} \\
-The Global Shapers Community is an interdisciplinary network of hubs developed and led by young working to a make a contribution to their communities.
+% TODO: Agregar experiencia voluntaria : REVISORA DE PROPUESTAS DE CHARLAS
 
-\begin{itemize}
-\item  World Economic Forum, Davos, Switzerland \hfill \textbf{Jan 2016} \vspace{2mm} \\
-I was one of the 50 Global Shapers in the world chosen to participate in the World Ecnomic Forum in Switzerland.
+%----------------------------------------------------------------------------------------
+%   Selected Awards
+%----------------------------------------------------------------------------------------
+\section{Selected Awards}
+
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+    \item[--] My project Científicas de Acá was distinguished by the Legislatura de Buenos Aires as a social interest project. (2022)
+    \item[--] Women Tech Founders 2018 awarded by Women Tech Founders, a network of tech entrepeneurs. I won this prize after 3 rounds which included nomination, public vote (over 3K votes), and final selection by jurors. (2019)
+    \item[--] Outstanding Woman Prize awarded by the Federation of Commerce and Industry of the Autonomous City of Buenos Aires (FECOBA) for her entrepreneurial potential and talent. (2019)
+    \item[--]  One Young World Ambassador awarded by One Young World is a UK-based not-for-profit organization that gathers young leaders from around the world to develop solutions to the globe's most pressing issues. (2017)
 \end{itemize}
 
-\textbf{Latinity Conference Chile \& Per\'u } \hfill 
- \hfill \textbf{Nov 2015 \& Aug 2017} \vspace{2mm}\\\vspace{1mm}
- \textsl{Scholarship Chair } 
 
-Latinity is the first latin american conference about Women in Computing with thousands of women technologist attendant.\\
-I designed the strategy, rubric and coordinated the selection of the 50 scholarship recipients in over 500 international applications..
-
-\textbf{ One Young World in Bogot\'a Colombia} \hfill 
- \hfill \textbf{Oct 2017} \vspace{2mm}\\\vspace{1mm}
-\textsl{Argentina Delegate } 
-
-OYW is an annual Summit that gathers together the brightest young leaders from around the world, empowering them to make lasting connections to create positive change.  I was the only Argentina that will be sponsored to participate with a Scholarship awarded by Audi.
-\newpage
-
-%_____________________________________________________________________________________________________________
-% Teaching Experience
-\section{\mysidestyle Teaching\\Experience}
-
-\textbf{Program\'a tu Futuro} \hfill \textbf{January 2015 --  December 2015}
-\\
-\textsl{Technical Mentor} \hfill 
-\begin{list2}
-	\item Program\'a tu Futuro is an innitiative of the Buenos Aires City Government to teach programming for free in the city's public libraries. I was one of the mentors in charge of the Palermo Club.
-\end{list2}\vspace{-1.5mm}
-
-\textbf{University of Buenos Aires}, Computer Science Department. \hfill \textbf{March 2011 --  Dec 2012}
-\\
-\textsl{Science Popularizer} \hfill 
-
-\textbf{University of Buenos Aires}, Computer Science Department. \hfill \textbf{March 2012 --  Jul 2012}
-\\
-\textsl{Teaching Assistant} \hfill
-\begin{list2}
-	\item Course: Algorithms and Data Structures I
-	\item Topics include Specification, Basic Data Structures, Recursion and Introduction to Algorithms.
-\end{list2}\vspace{-1.5mm}
-
-\vspace{2mm}
+%----------------------------------------------------------------------------------------
+%   Speaker Highlights 
+%----------------------------------------------------------------------------------------
+\section{Speaker Highlights}
 
 
-%_____________________________________________________________________________________________________________
-%____________________________________________________________________________________________________________
-% Events
-\section{\mysidestyle Personal\\Work}
-
-\textbf{Software Projects}
-\begin{list2}
-
-\item Simon Says Game coded in Elm: \href{https://github.com/carohadad/simon-elm}{code}, \href{https://carohadad.github.io/simon-elm/}{demo}, \href{https://medium.com/@carohadad/mi-primer-programa-en-elm-574ce6a445c3}{blogpost}.
-
-\item Tic Tac Toe Game coded in React: \href{https://github.com/carohadad/tic-tac-toe-react}{code}, \href{https://carohadad.github.io/tic-tac-toe-react/}{demo}.
-
-\end{list2}
-
-\textbf{Writing}
-\begin{itemize}
-\item \href{https://medium.com/@carohadad} {Personal Blog}
-\item \href{http://www.lanacion.com.ar/autor/carolina-hadad-10522} {Column about technology in La Naci\'on} - One of the biggest Argentina newspapers.
-\item \href{https://www.intrepidas.com.ar/} {Columnist at Intrepidas} - Magazine for girls aged 6 to 12 about science, art and technology.
-\item \href{https://bit.ly/data-anal-python} {Data Analysis Writeups} - Coded in Python with Pandas and graphs using Plotly.
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+  \item[--] Wingu FITS @ Buenos Aires (Jun 2022). Keynote sobre cómo los proyectos técnicos pueden ser más inclusivos \href{https://www.youtube.com/watch?v=1vu4bFradGI&t=3s&ab_channel=Winguchannel}{Link}
+    \item[--]  Conectados BA @ Buenos Aires, Argentina (Feb 2019) Talk about programming with social impact to over 3K teenagers.
+    \item[--] Speaker @ TEDx Córdoba, Argentina (Oct 2015) My talk about Technology with a Social Impact has over 25K views. \href{https://www.youtube.com/watch?v=0cx8UwdN-g4&t=1s&ab_channel=TEDxTalks}{Link}
+    \item[--] Speaker @ Meetup.js in Buenos Aires (Aug 2017). I did a talk about Firebase and React.js. 
+    \item[--]  Mentor @ Rails Girls Buenos Aires (Nov 2016)
+    \item[--] Speaker @ Google Developers Summit, Quito, Ecuador (Aug 2017). I was invited to give a presentation about tools that can be used in emergency contexts for humanitarian issues.
+    \item[--] Speaker @ Latinity Santiago de Chile (Oct 2015)
+    \item[--] Hosted Hackaton @ Grace Hopper Conference Phoenix Arizona, USA (Oct 2014)
 \end{itemize}
 
 
 
 
-\section{\mysidestyle Awards+\\Scholarships}
-
-\begin{list2}
-\item \href{https://womentechfounders.com/2018-award-winners/}{Women Tech Founders 2018} I won this prize after 3 rounds which included nomination, public vote (over 3K votes), and final selection by jurors.
-
-\item Outstanding Woman Prize
- \hfill \textbf{Mar 2019} \\
-Commended by the Federation of Commerce and Industry of the Autonomous City of Buenos Aires (FECOBA) for her entrepreneurial potential and talent.
-
-\item \href{oneyoungworld.com/ambassador-projects/chicas-en-tecnología}{One Young World Ambassador}
- \hfill \textbf{Oct 2017} \\
-One Young World is a UK-based not-for-profit organization that gathers young leaders from around the world to develop solutions to the globe\'s most pressing issues.
-
-\item Google IO 2017, Mountain View, USA \hfill \textbf{May 2017}
-\\
-I received a full scholarship awarded by Anita Borg Institute to attend the summit.
-
-
-\item Open Viz Conf, Boston, USA \hfill \textbf{Mar 2017}
-\\ I received a full scholarship awarded by the conference to be able to attend.
-
-\item First Prize @ Hackathon: Desarrollando Am\'erica Latina \hfill \textbf{Mar 2013} \\
-We coded a platform for games for children with autism and got the first prize in Argentina.
-
-
-\end{list2}
-
-
-\section{\mysidestyle Speaker\\Highlights}
-
-\begin{list2}
-
-\item Conectados BA @ Buenos Aires, Argentina \hfill \textbf{Feb 2019}  \\
-Talk about programming with social impact to over 3K teenagers.
-
-\item Speaker @ TEDx C\'ordoba, Argentina \hfill \textbf{Oct 2015}  \\
-My talk about Technology with a Social Impact has over 20K views \href{https://www.youtube.com/watch?v=0cx8UwdN-g4&t=1s}{\textbf{Programar con Impacto Social}}.
-
-
-\item Speaker @ Meetup.js in Buenos Aires \hfill \textbf{Aug 2017}
-\\
-I did a talk about Firebase + React.js. \href{https://www.meetup.com/Meetup-js/events/242439836/?eventId=242439836}{more-info}
-
-\item Mentor  @ Rails Girls Buenos Aires \hfill \textbf{Nov 2016}
-
-\item Speaker @ Google Developers Summit, Quito, Ecuador \hfill \textbf{Jul 2016}  \\
-I was invited to give a presentation about tools that can be used in emergency contexts for humanitarian issues.
-
-\item Speaker @ Latinity Santiago de Chile \textbf{Oct 2015}
-
-\item Hosted Hackaton @ Grace Hopper Conference Phoenix Arizona, USA \hfill \textbf{Oct 2014} 
-
-
-\end{list2}
 
 
 
-    
 
-\end{resume}
+
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
 \end{document}
-
-%_____________________________________________________________________________________________________________
-% EOF
